@@ -1,0 +1,15 @@
+{% extends 'student_base.html' %}
+
+{% block title %}Student Details{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Student Details</h2>
+<ul class="list-group">
+    <li class="list-group-item"><strong>First Name:</strong> {{ student.first_name }}</li>
+    <li class="list-group-item"><strong>Last Name:</strong> {{ student.last_name }}</li>
+    <li class="list-group-item"><strong>Age:</strong> {{ student.age }}</li>
+</ul>
+<a href="{% url 'students_details' %}" class="btn btn-link mt-3">Back to List</a><br>
+<a href="{% url 'student_update' student.pk %}" class="btn btn-secondary">update</a>
+<a href="{% url 'student_delete' student.pk %}" class="btn btn-secondary">delete</a>
+{% endblock %}
